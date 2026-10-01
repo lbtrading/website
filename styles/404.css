@@ -1,0 +1,50 @@
+:root {
+  --bar-height: 48px;
+  --gap: 28px;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: grid;
+  place-items: center;
+}
+
+.row {
+  display: flex;
+  align-items: baseline;
+}
+
+.codeWrap {
+  position: relative;
+  margin-right: calc(var(--gap) * 2);
+}
+
+.code {
+  margin: 0;
+  font-size: 26px;
+  line-height: 1;
+  font-weight: 500;
+}
+
+.codeWrap::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: calc(-1 * var(--gap));
+  transform: translateY(-50%);
+  width: 1px;
+  height: var(--bar-height);
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.msg {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1;
+  font-weight: 400;
+}

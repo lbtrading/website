@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>lb trading</title>
+  <meta name="viewport" content="width=device-width, initial-scale=0.75" />
+  <link rel="icon" href="/assets/logo.jpg" type="image/jpeg" sizes="any" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/logo_180.png" />
+  <link rel="stylesheet" href="/styles/main.css" />
+</head>
+<body>
+  <table role="presentation" cellpadding="0" cellspacing="0">
+    <tr>
+      <td valign="middle">
+        <img class="logo" src="/assets/logo.jpg" alt="logo" />
+      </td>
+      <td width="18"></td>
+      <td valign="middle">
+        <div class="siteTitle">lb trading</div>
+      </td>
+    </tr>
+  </table>
+
+  <p class="tagline">market making operation</p>
+  <p><a href="mailto:contact@lbtrading.com">contact@lbtrading.com</a></p>
+ 
+  <ul>
+    <li><a href="/">home</a></li>
+    <li><a href="/challenges">challenges</a></li>
+  </ul>
+
+  <p>ntarsis passed his HRT interview and has started his internship. he’s tasked with arbing BTC between two exchanges. he first observes the orderbook for BTC/USD on each exchange. identifying that these two orderbooks represent the same thing was a nonissue; he didn’t even consider it. BTC is BTC everywhere.</p>
+  <p>ntarsis is then tasked with arbing markets between kalshi and polymarket. he cannot make the same assumptions he made with BTC. market X on kalshi and market Y on polymarket may be such that X=Y, but this mapping is not well defined. market ids, symbols, slugs, rules, etc., all may differ.</p>
+  <p>an easy solution would be to dump two markets’ metadata to an LLM. in an environment where any false positives are costly, this easy solution would get ntarsis fired.</p>
+  <p>help ntarsis get a return offer by creating a function that takes as input a market id from kalshi/polymarket and deterministically outputs the market id for the equivalent market on the other exchange, or false if one doesn’t exist.</p>
+
+</body>
+</html>
