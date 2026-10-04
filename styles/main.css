@@ -24,7 +24,7 @@ body {
   object-fit:cover;
   border-radius:var(--r);
   border:0;
-  background:#fff;
+  background:#000;
 }
 
 .siteTitle {
