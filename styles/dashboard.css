@@ -1,0 +1,342 @@
+/* Extend main.css: keep the original type, page margins, colors, and header. */
+:root {
+  color-scheme: dark;
+  --muted: #aaa;
+  --positive: #8fd5b0;
+  --negative: #f0a0a0;
+}
+body {
+  font-variant-numeric: tabular-nums;
+}
+button,
+input {
+  font: inherit;
+  color: var(--text);
+  background: var(--bg);
+}
+button {
+  cursor: pointer;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 5px 10px;
+}
+button:hover:not(:disabled) {
+  border-color: var(--text);
+}
+button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+a,
+button,
+svg,
+summary,
+.table-scroll {
+  outline-offset: 4px;
+}
+:focus-visible {
+  outline: 2px solid white;
+}
+.skip-link {
+  position: absolute;
+  top: -80px;
+  left: 24px;
+  background: black;
+  padding: 12px;
+  z-index: 2;
+}
+.skip-link:focus {
+  top: 10px;
+}
+nav [aria-current] {
+  font-weight: 700;
+}
+.page-heading {
+  margin: 26px 0;
+}
+h1 {
+  font-size: 20px;
+  margin: 0 0 8px;
+}
+.asof {
+  font-size: 12px;
+  color: var(--muted);
+}
+.asof strong {
+  color: white;
+  font-weight: 400;
+  margin-right: 12px;
+}
+.notice {
+  border: 1px solid var(--border);
+  padding: 12px;
+  font-size: 12px;
+}
+.section-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+h2 {
+  font-size: 14px;
+  font-weight: 400;
+  margin: 0;
+  text-transform: lowercase;
+}
+.section-bar p,
+.period-label {
+  color: var(--muted);
+  font-size: 12px;
+}
+.section-bar p {
+  margin: 4px 0 0;
+}
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin: 0 0 26px;
+}
+.kpi {
+  border: 2px solid var(--border);
+  border-radius: var(--r);
+  padding: 16px 18px;
+  min-width: 0;
+}
+.kpi-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.kpi-value {
+  margin-top: 6px;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+}
+.positive {
+  color: var(--positive);
+}
+.negative {
+  color: var(--negative);
+}
+.chart-panel {
+  margin-bottom: 26px;
+}
+.filters {
+  display: flex;
+  gap: 8px;
+}
+.filters button {
+  font-size: 12px;
+}
+.filters button[aria-pressed="true"] {
+  border-color: white;
+  text-decoration: underline;
+}
+.chart-readout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: baseline;
+  min-height: 32px;
+  font-size: 18px;
+  margin: 12px 0;
+}
+.chart-readout span {
+  font-size: 12px;
+  color: var(--muted);
+}
+.chart {
+  width: 100%;
+  height: 260px;
+  display: block;
+  touch-action: pan-y;
+}
+.chart text {
+  font:
+    11px ui-monospace,
+    SFMono-Regular,
+    Menlo,
+    Monaco,
+    Consolas,
+    "Liberation Mono",
+    "Courier New",
+    monospace;
+  fill: var(--muted);
+}
+.chart .grid {
+  stroke: var(--border);
+  stroke-width: 1;
+}
+.chart .profit-line {
+  stroke: white;
+  stroke-width: 1.5;
+  fill: none;
+  vector-effect: non-scaling-stroke;
+}
+.chart .crosshair {
+  stroke: var(--muted);
+  stroke-dasharray: 3 4;
+}
+.two-column {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 26px;
+  margin-bottom: 26px;
+}
+.two-column .chart-panel {
+  margin: 0;
+}
+.breakdown {
+  min-width: 0;
+}
+.breakdown dl {
+  margin: 12px 0;
+}
+.breakdown dl div {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px 0;
+  font-size: 12px;
+  border-bottom: 1px solid var(--border);
+}
+.breakdown dt {
+  color: var(--muted);
+}
+.breakdown dd {
+  margin: 0;
+  white-space: nowrap;
+}
+.breakdown dl .total {
+  border: 0;
+  font-weight: 700;
+}
+.breakdown .total dt {
+  color: white;
+}
+.table-panel {
+  margin: 26px 0;
+}
+.table-scroll {
+  overflow: auto;
+  border: 2px solid var(--border);
+  border-radius: var(--r);
+}
+.table-scroll table {
+  width: 100%;
+  border-collapse: collapse;
+  white-space: nowrap;
+  font-size: 12px;
+}
+.table-scroll th,
+.table-scroll td {
+  text-align: right;
+  padding: 8px 10px;
+}
+.table-scroll thead th {
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border-bottom: 1px solid var(--border);
+}
+.table-scroll tbody th {
+  font-weight: 400;
+}
+.table-scroll th:first-child,
+.table-scroll td:first-child {
+  text-align: left;
+}
+.table-scroll tbody tr:hover {
+  background: #111;
+}
+.venue-name span {
+  margin-left: 8px;
+}
+.table-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 12px;
+}
+.pagination {
+  display: flex;
+  gap: 8px;
+}
+footer.footer {
+  margin-top: 26px;
+}
+[hidden] {
+  display: none !important;
+}
+@media (max-width: 900px) {
+  .two-column {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 600px) {
+  .kpi-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .kpi {
+    padding: 14px 12px;
+  }
+  .kpi-label {
+    font-size: 10px;
+    letter-spacing: 0.04em;
+  }
+  .kpi-value {
+    font-size: clamp(15px, 4.8vw, 21px);
+    white-space: nowrap;
+  }
+  .asof strong {
+    display: block;
+    margin-bottom: 4px;
+  }
+  .chart {
+    height: 225px;
+  }
+}
+
+/* Keep every venue visible; wrap the row naturally on small screens. */
+.venue-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 20px 0 26px;
+}
+.venue-nav a {
+  display: inline-block;
+  padding: 7px 12px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-size: 12px;
+}
+.venue-nav a:hover,
+.venue-nav a[aria-current="page"] {
+  border-color: white;
+}
+.venue-nav a[aria-current="page"] {
+  background: #181818;
+}
+.chart-panel,
+.breakdown {
+  border: 2px solid var(--border);
+  border-radius: var(--r);
+  padding: 16px 18px;
+}
+@media (max-width: 600px) {
+  .chart-panel,
+  .breakdown {
+    padding: 14px 12px;
+  }
+}

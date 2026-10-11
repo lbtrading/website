@@ -1,73 +1,56 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <title>lbtrading</title>
-  <meta name="viewport" content="width=device-width, initial-scale=0.75" />
-  <link rel="icon" href="/assets/logo.png" type="image/png" sizes="any" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/logo_180.png" />
-  <link rel="stylesheet" href="/styles/main.css?v=2" />
-  <script src="/logo.js" defer></script>
-</head>
-<body>
-  <table role="presentation" cellpadding="0" cellspacing="0">
-    <tr>
-      <td valign="middle">
-        <img class="logo" src="/assets/logo.png" alt="logo" />
-      </td>
-      <td width="18"></td>
-      <td valign="middle">
-        <div class="siteTitle">lbtrading</div>
-      </td>
-    </tr>
-  </table>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>lbtrading — polymarket-us</title>
+    <link rel="icon" href="/assets/logo.png" type="image/png" sizes="any" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/logo_180.png" />
+    <link rel="stylesheet" href="/styles/main.css?v=2" />
+    <link rel="stylesheet" href="/styles/dashboard.css" />
+    <script src="/logo.js" defer></script>
+    <script src="/stats/dashboard.js" defer></script>
+  </head>
+  <body data-venue="polymarket-us">
+    <a class="skip-link" href="#main">Skip to performance</a>
+    <header>
+      <table role="presentation" cellpadding="0" cellspacing="0">
+        <tr>
+          <td valign="middle">
+            <img class="logo" src="/assets/logo.png" alt="logo" />
+          </td>
+          <td width="18"></td>
+          <td valign="middle">
+            <div class="siteTitle">lbtrading</div>
+          </td>
+        </tr>
+      </table>
 
-  <p class="tagline">market making operation</p>
-  <p><a href="mailto:contact@lbtrading.com">contact@lbtrading.com</a></p>
-
-  <ul>
-    <li><a href="/">home</a></li>
-    <li><a href="/stats">stats</a></li>
-  </ul>
-
-  <section class="stats">
-    <div class="stat"><div class="label">Volume (contracts)</div><div id="volContracts" class="value">—</div></div>
-    <div class="stat"><div class="label">Volume (usd)</div><div id="volUsd" class="value">—</div></div>
-    <div class="stat"><div class="label">Trades</div><div id="trades" class="value">—</div></div>
-
-    <div class="stat"><div class="label">Revenue</div><div id="revenue" class="value">—</div></div>
-    <div class="stat"><div class="label">Fees</div><div id="fees" class="value">—</div></div>
-    <div class="stat"><div class="label">Profit</div><div id="profit" class="value">—</div></div>
-
-    <div class="stat"><div class="label">Interest</div><div id="interest" class="value">—</div></div>
-    <div class="stat"><div class="label">Rebate</div><div id="rebate" class="value">—</div></div>
-    <div class="stat"><div class="label">Incentive</div><div id="incentive" class="value">—</div></div>
-
-    <div class="stat"><div class="label">Days</div><div id="daysTrading" class="value">—</div></div>
-    <div class="stat"><div class="label">Return</div><div id="pctReturn" class="value">—</div></div>
-    <div class="stat"><div class="label">Sharpe</div><div id="sharpe" class="value">—</div></div>
-  </section>
-
-  <section class="history">
-    <div class="historyBox">
-      <div class="hhdr">
-        <div class="cell">date</div>
-        <div class="cell">index</div>
-        <div class="cell">volume (c)</div>
-        <div class="cell">volume ($)</div>
-        <div class="cell">trades</div>
-        <div class="cell">revenue</div>
-        <div class="cell">fees</div>
-        <div class="cell">profit</div>
+      <p class="tagline">market making operation</p>
+      <p><a href="mailto:contact@lbtrading.com">contact@lbtrading.com</a></p>
+    </header>
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="/">home</a></li>
+      </ul>
+    </nav>
+    <nav class="venue-nav" aria-label="Trading venues">
+      <a href="/stats">firmwide</a><a href="/stats/kalshi">kalshi</a
+      ><a href="/stats/polymarket">polymarket</a
+      ><a href="/stats/polymarket-us" aria-current="page">polymarket-us</a
+      ><a href="/stats/prophetx">prophetx</a><a href="/stats/novig">novig</a>
+    </nav>
+    <main id="main">
+      <div class="page-heading">
+        <h1>polymarket-us</h1>
+        <div class="asof" id="asof">Loading data…</div>
       </div>
-      <div id="historyRows"></div>
-    </div>
-  </section>
-
-  <div id="updated" class="updated">Updated: —</div>
-  <div class="footer">Lukacsy-Bhowmik Trading LLC</div>
-
-  <script src="stats.js"></script>
-  <script src="polymarket_us.js"></script>
-</body>
+      <div id="load-status" role="status" class="notice">
+        Loading performance data…
+      </div>
+      <div id="dashboard" hidden></div>
+      <noscript><p>Enable JavaScript to view performance data.</p></noscript>
+    </main>
+    <footer class="footer">Lukacsy-Bhowmik Trading LLC</footer>
+  </body>
 </html>
