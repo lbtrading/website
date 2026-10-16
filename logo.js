@@ -1,4 +1,4 @@
-const legacy = localStorage.getItem("logoMode") === "legacy";
+const legacy = document.cookie.split(";").some(c => c.trim() === "lbtLogoMode=legacy");
 const name = legacy ? "friends" : "logo";
 
 const icon = document.querySelector('link[rel="icon"]');
@@ -12,13 +12,9 @@ if (logo) logo.src = `/assets/${name}.png`;
 
 if (toggle) {
   toggle.textContent = legacy ? "current" : "legacy";
-
   toggle.addEventListener("click", event => {
     event.preventDefault();
-
-    if (legacy) localStorage.removeItem("logoMode");
-    else localStorage.setItem("logoMode", "legacy");
-
+    document.cookie = `lbtLogoMode=legacy; Domain=lbtrading.com; Path=/; Max-Age=${legacy ? 0 : 31536000}; Secure; SameSite=Lax`;
     location.reload();
   });
 }
